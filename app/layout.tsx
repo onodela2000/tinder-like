@@ -18,14 +18,14 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "data:image/svg+xml,%3Csvg width='512' height='512' viewBox='0 0 512 512' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='512' height='512' rx='128' fill='%236C5CE7'/%3E%3Crect x='128' y='176' width='200' height='280' rx='24' transform='rotate(-15 128 176)' fill='white'/%3E%3Crect x='184' y='156' width='200' height='280' rx='24' transform='rotate(15 184 156)' fill='rgba(255,255,255,0.9)'/%3E%3C/svg%3E",
+        url: "data:image/svg+xml,%3Csvg width='512' height='512' viewBox='0 0 512 512' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='512' height='512' rx='128' fill='%23FF69B4'/%3E%3Crect x='156' y='116' width='200' height='280' rx='24' fill='white'/%3E%3Cpath d='M256 280C280 280 300 260 300 236C300 212 280 192 256 192C232 192 212 212 212 236C212 260 232 280 256 280ZM256 300C212 300 176 318 176 340V360H336V340C336 318 300 300 256 300Z' fill='%23FF69B4'/%3E%3C/svg%3E",
         sizes: "512x512",
         type: "image/svg+xml"
       }
     ],
     apple: [
       {
-        url: "data:image/svg+xml,%3Csvg width='512' height='512' viewBox='0 0 512 512' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='512' height='512' rx='128' fill='%236C5CE7'/%3E%3Crect x='128' y='176' width='200' height='280' rx='24' transform='rotate(-15 128 176)' fill='white'/%3E%3Crect x='184' y='156' width='200' height='280' rx='24' transform='rotate(15 184 156)' fill='rgba(255,255,255,0.9)'/%3E%3C/svg%3E",
+        url: "data:image/svg+xml,%3Csvg width='512' height='512' viewBox='0 0 512 512' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='512' height='512' rx='128' fill='%23FF69B4'/%3E%3Crect x='156' y='116' width='200' height='280' rx='24' fill='white'/%3E%3Cpath d='M256 280C280 280 300 260 300 236C300 212 280 192 256 192C232 192 212 212 212 236C212 260 232 280 256 280ZM256 300C212 300 176 318 176 340V360H336V340C336 318 300 300 256 300Z' fill='%23FF69B4'/%3E%3C/svg%3E",
         sizes: "512x512"
       }
     ]
