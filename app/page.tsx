@@ -16,6 +16,7 @@ export default function SwipeCard() {
   const currentX = useRef(0)
   const touchStartX = useRef(0)
   const touchStartTime = useRef(0)
+  const [preloadedImages, setPreloadedImages] = useState<string[]>([])
 
   const [style, api] = useSpring(() => ({
     x: 0,
@@ -55,6 +56,8 @@ export default function SwipeCard() {
   }))
 
   useEffect(() => {
+    if (currentIndex >= profiles.length) return
+    
     progressApi.start({ width: '100%' })
     const timer = setTimeout(() => {
       handleNextImage()
@@ -204,6 +207,30 @@ export default function SwipeCard() {
     return () => window.removeEventListener('mouseup', handleMouseUp)
   }, [isDragging])
 
+  const preloadImages = (imageUrls: string[] | undefined) => {
+    if (!imageUrls) return
+    imageUrls.forEach(url => {
+      const img = new Image()
+      img.src = url
+      setPreloadedImages(prev => [...prev, url])
+    })
+  }
+
+  useEffect(() => {
+    if (currentIndex < profiles.length - 1) {
+      const nextProfile = profiles[currentIndex + 1]
+      preloadImages(nextProfile?.images)
+    }
+  }, [currentIndex])
+
+  useEffect(() => {
+    const profile = profiles[currentIndex]
+    if (profile && currentImageIndex < profile.images.length - 1) {
+      const nextImage = profile.images[currentImageIndex + 1]
+      preloadImages([nextImage])
+    }
+  }, [currentImageIndex, currentIndex])
+
   if (currentIndex >= profiles.length) {
     return (
       <div className="min-h-[100svh] flex flex-col items-center justify-center p-8 bg-gradient-to-b from-rose-50 to-slate-50">
@@ -334,6 +361,7 @@ export default function SwipeCard() {
                 alt={`${profile.name}'s photo ${currentImageIndex + 1}`}
                 className="w-full h-full object-cover select-none pointer-events-none"
                 draggable="false"
+                loading="lazy"
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
